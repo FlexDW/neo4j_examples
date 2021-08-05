@@ -1,2 +1,3 @@
-# neo4j_examples
-Working on Neo4j tutorials
+# Neo4j Examples
+
+Demo environment for working through Neo4j analytics exercises.

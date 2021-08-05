@@ -1,0 +1,5 @@
+FROM continuumio/anaconda3:2021.05
+
+RUN apt-get -y update --fix-missing
+RUN apt-get -y install python3-pip
+RUN pip3 install neo4j

@@ -1,0 +1,15 @@
+FROM neo4j:4.3.2-enterprise
+
+# Install curl
+RUN apt-get -y update --fix-missing
+RUN apt-get -y install curl
+
+# Enable APOCs
+ENV APOC_VERSION 4.2.0.2
+ENV APOC_URL https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/${APOC_VERSION}/apoc-${APOC_VERSION}-all.jar
+RUN curl --location $APOC_URL --output /var/lib/neo4j/plugins/apoc.jar
+
+# Enable Graph Datascience
+ENV GDS_VERSION 1.6.4
+ENV GDS_URL https://s3-eu-west-1.amazonaws.com/com.neo4j.graphalgorithms.dist/graph-data-science/neo4j-graph-data-science-${GDS_VERSION}.jar
+RUN curl --location $GDS_URL --output /var/lib/neo4j/plugins/graph-data-science.jar

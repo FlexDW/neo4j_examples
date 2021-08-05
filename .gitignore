@@ -1,0 +1,16 @@
+# .dot files except .gitignore
+**/.*
+!**/.gitignore
+
+# keep folders but ignore contents for mounted volumes
+**/data/*
+**/plugins/*
+**/logs/*
+
+
+# python byte-compiled / optimized / DLL files
+**/__pycache__/
+*.py[cod]
+
+# jupyter notebook caches
+**/.ipynb*/
